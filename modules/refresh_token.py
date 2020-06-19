@@ -11,8 +11,6 @@ from NagiosResponse import NagiosResponse
 
 
 def main():
-    token_file = "/etc/nagios/globus/oidc"
-
     parser = argparse.ArgumentParser(
         description="Nagios probe for fetching tokens."
     )
@@ -28,7 +26,17 @@ def main():
         "--refresh_token", dest="refresh_token", type=str, required=True,
         help="The value of the refresh token"
     )
+    parser.add_argument(
+        "--token_file", dest="token_file", type=str,
+        help="File for storing obtained token"
+    )
     args = parser.parse_args()
+
+    if args.token_file:
+        token_file = args.token_file
+
+    else:
+        token_file = "/etc/nagios/globus/oidc"
 
     nagios = NagiosResponse("Access token fetched successfully.")
 
