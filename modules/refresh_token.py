@@ -32,7 +32,7 @@ def main():
         help="File for storing obtained token"
     )
     parser.add_argument(
-        "--timeout", dest="timeout", type=int, default=60,
+        "-t", "--timeout", dest="timeout", type=int, default=60,
         help="timeout"
     )
     args = parser.parse_args()
