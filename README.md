@@ -169,3 +169,17 @@ $ authn_check.py [-h] --authn-host AUTHN_HOST --authn-port AUTHN_PORT
  --ams-host 127.0.0.1 --verify
  
  ```
+
+## Fetch token
+The probe is used to obtain an access token from a refresh token. If the token is successfully fetched, it is stored in `/etc/nagios/globus/oidc` file and success message is returned. In case there is a problem obtaining or storing token, critical error is raised.
+
+### Usage example
+
+```sh
+usage: refresh_token [-h] --client_id CLIENT_ID --client_secret CLIENT_SECRET
+                     --refresh_token REFRESH_TOKEN
+```
+
+* `--client_id`: The identifier of the client.
+* `--client_secret`: The secret value of the client.
+* `--refresh_token`: The value of the refresh token.
