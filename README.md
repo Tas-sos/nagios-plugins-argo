@@ -183,3 +183,4 @@ usage: refresh_token [-h] --client_id CLIENT_ID --client_secret CLIENT_SECRET
 * `--client_id`: The identifier of the client.
 * `--client_secret`: The secret value of the client.
 * `--refresh_token`: The value of the refresh token.
+* `--token_file`: The name of the file where token is going to be saved.
