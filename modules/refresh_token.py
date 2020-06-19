@@ -50,7 +50,8 @@ def main():
                 "grant_type": "refresh_token",
                 "refresh_token": args.refresh_token,
                 "scope": "openid email profile"
-            }
+            },
+            timeout=60
         )
         response.raise_for_status()
 
