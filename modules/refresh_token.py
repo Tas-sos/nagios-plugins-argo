@@ -28,15 +28,14 @@ def main():
     )
     parser.add_argument(
         "--token_file", dest="token_file", type=str,
+        default="/etc/nagios/globus/oidc",
         help="File for storing obtained token"
     )
+    parser.add_argument(
+        "--timeout", dest="timeout", type=int, default=60,
+        help="timeout"
+    )
     args = parser.parse_args()
-
-    if args.token_file:
-        token_file = args.token_file
-
-    else:
-        token_file = "/etc/nagios/globus/oidc"
 
     nagios = NagiosResponse("Access token fetched successfully.")
 
@@ -51,13 +50,13 @@ def main():
                 "refresh_token": args.refresh_token,
                 "scope": "openid email profile"
             },
-            timeout=60
+            timeout=args.timeout
         )
         response.raise_for_status()
 
         access_token = response.json()["access_token"]
 
-        with open(token_file, "w") as f:
+        with open(args.token_file, "w") as f:
             f.write(access_token)
 
         try:
@@ -78,7 +77,7 @@ def main():
             print nagios.getMsg()
             sys.exit(nagios.getCode())
 
-        os.chown(token_file, uid, gid)
+        os.chown(args.token_file, uid, gid)
 
         print nagios.getMsg()
         sys.exit(nagios.getCode())

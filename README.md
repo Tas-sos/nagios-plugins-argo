@@ -180,7 +180,8 @@ usage: refresh_token [-h] --client_id CLIENT_ID --client_secret CLIENT_SECRET
                      --refresh_token REFRESH_TOKEN
 ```
 
-* `--client_id`: The identifier of the client.
-* `--client_secret`: The secret value of the client.
-* `--refresh_token`: The value of the refresh token.
-* `--token_file`: The name of the file where token is going to be saved.
+* `--client_id`: the identifier of the client.
+* `--client_secret`: the secret value of the client.
+* `--refresh_token`: the value of the refresh token.
+* `--token_file`: the name of the file where token is going to be saved.
+* `--timeout`: request timeout.
