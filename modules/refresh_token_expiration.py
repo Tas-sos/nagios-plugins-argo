@@ -50,6 +50,9 @@ def validate_token(args):
 
         print nagios.getMsg()
 
+    except jwt.exceptions.DecodeError as e:
+        print "UNKNOWN - Token is malformed: %s" % str(e)
+
     except Exception as e:
         print "UNKNOWN - %s" % str(e)
 
