@@ -11,10 +11,10 @@ Source0: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Group: Network/Monitoring
 BuildArch: noarch
-Requires: python-requests, argo-ams-library, pyOpenSSL, python-argparse, nagios-plugins-file_age, curl, python-jwt
+Requires: python-requests, argo-ams-library, pyOpenSSL, python-argparse, nagios-plugins-file_age, curl
 
 %description
-This package includes probes for ARGO components.
+This package includes probes for ARGO components. 
 Currently it supports the following components:
  - ARGO Consumer log
  - ARGO EGI Connectors
@@ -23,7 +23,7 @@ Currently it supports the following components:
  - POEM service
 
 %prep
-%setup -q
+%setup -q 
 
 %build
 %{__python} setup.py build
@@ -45,7 +45,7 @@ rm -rf %{buildroot}
 
 %changelog
 * Wed Apr 1 2020 Daniel Vrcic <daniel.vrcic@gmail.com>, Angelos Tsalapatis <agelos.tsal@gmail.com> - 0.1.12-1%{?dist}
-- ARGO-2014 Update connectors internal tests wrt poem connectors changes
+- ARGO-2014 Update connectors internal tests wrt poem connectors changes 
 - ARGO-1752 Authn nagios probe
 * Thu Nov 8 2018 Daniel Vrcic <daniel.vrcic@gmail.com>, Katarina Zailac <kzailac@srce.hr>, Emir Imamagic <eimamagi@srce.hr>, Angelos Tsalapatis <agelos.tsal@gmail.com> - 0.1.11-1%{?dist}
 - ARGO-1369 Check POEM metric configuration API
@@ -57,7 +57,7 @@ rm -rf %{buildroot}
 - added argo-nagios-ams-publisher
 * Mon Dec 4 2017 Daniel Vrcic <daniel.vrcic@gmail.com> - 0.1.8-1%{?dist}
 - connectors-probe warning logic revised
-- connectors-probe updated global.conf parsing
+- connectors-probe updated global.conf parsing 
 * Tue Jun 6 2017 Daniel Vrcic <daniel.vrcic@gmail.com> - 0.1.7-4%{?dist}
 - sprint release minor version bump
 * Thu May 25 2017 Daniel Vrcic <daniel.vrcic@gmail.com> - 0.1.7-3%{?dist}
@@ -68,9 +68,9 @@ rm -rf %{buildroot}
 * Tue May 16 2017 Hrvoje Sute <sute.hrvoje@gmail.com> - 0.1.7-1%{?dist}
 - ARGO-759 Develop a probe that checks the status of AMS
 * Wed Apr 26 2017 Daniel Vrcic <daniel.vrcic@gmail.com> - 0.1.6-4%{?dist}
-- converted tab to whitespaces
+- converted tab to whitespaces 
 - check current date for the downtimes state
-- vertical line separator for multiple fail msgs
+- vertical line separator for multiple fail msgs 
 * Wed Apr 26 2017 Hrvoje Sute <sute.hrvoje@gmail.com> - 0.1.6-3%{?dist}
 - More descriptive OK status
 * Tue Apr 25 2017 Hrvoje Sute <sute.hrvoje@gmail.com> - 0.1.6-2%{?dist}
@@ -78,14 +78,14 @@ rm -rf %{buildroot}
 * Thu Apr 20 2017 Hrvoje Sute <sute.hrvoje@gmail.com> - 0.1.6-1%{?dist}
 - ARGO-754 Nagios sensor for connectors component
 * Thu Apr 6 2017 Daniel Vrcic <daniel.vrcic@gmail.com> - 0.1.5-3%{?dist}
-- ARGO-773 POEM probe should have argument for client certificate
+- ARGO-773 POEM probe should have argument for client certificate 
 * Tue Mar 21 2017 Daniel Vrcic <daniel.vrcic@gmail.com>, Themis Zamani <themiszamani@gmail.com> - 0.1.5-2%{?dist}
-- POEM probe verify certs in all request calls to remove warning msg
+- POEM probe verify certs in all request calls to remove warning msg 
 - ARGO-756 [WEB API] - New status check to nagios internal probe
 * Thu Mar 9 2017 Daniel Vrcic <daniel.vrcic@gmail.com> - 0.1.5-1%{?dist}
 - ARGO-677 POEM probe should properly check host certificate
 * Thu Mar 9 2017 Daniel Vrcic <daniel.vrcic@gmail.com> - 0.1.4-1%{?dist}
-- ARGO-676 Added default --capath to POEM probe
+- ARGO-676 Added default --capath to POEM probe 
 * Thu Mar 9 2017 Emir Imamagic <eimamagi@srce.hr> - 0.1.3-1%{dist}
 - Added consumer log probe & deps
 * Tue Nov 1 2016 Daniel Vrcic <daniel.vrcic@gmail.com> - 0.1.2-1%{?dist}
