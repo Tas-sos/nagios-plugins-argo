@@ -185,3 +185,15 @@ usage: refresh_token [-h] --client_id CLIENT_ID --client_secret CLIENT_SECRET
 * `--refresh_token`: the value of the refresh token.
 * `--token_file`: the name of the file where token is going to be saved.
 * `--timeout`: request timeout.
+
+
+## Check refresh token validity
+
+The probe is used to check validity of the OIDC refresh token by checking its expiration date. If the token is about to expire in the next 30 days, warning error is raised. If the token is about to expire in less then 15 days, critical error is raised.
+
+```shell script
+usage: check-refresh-token-expiration [-h] --token TOKEN [-t TIMEOUT]
+```
+
+* `--token`: refresh token.
+* `-t`: probe timeout.
