@@ -4,7 +4,7 @@
 
 Name: nagios-plugins-argo
 Summary: ARGO components related probes.
-Version: 0.1.12
+Version: 0.1.13
 Release: 1%{?dist}
 License: ASL 2.0
 Source0: %{name}-%{version}.tar.gz
@@ -44,6 +44,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Mon Aug 31 2020 Katarina Zailac <kzailac@srce.hr> - 0.1.13-1%{?dist}
+- ARGO-2442 Monitor OIDC refresh token expiration
+- ARGO-2443 Implement probe for fetching tokens
 * Wed Apr 1 2020 Daniel Vrcic <daniel.vrcic@gmail.com>, Angelos Tsalapatis <agelos.tsal@gmail.com> - 0.1.12-1%{?dist}
 - ARGO-2014 Update connectors internal tests wrt poem connectors changes
 - ARGO-1752 Authn nagios probe
