@@ -6,6 +6,7 @@ Currently, there are probes for:
 
 - ARGO EGI Connectors
 - ARGO Messaging service
+- AMS Push Server(through AMS)
 - ARGO Messaging Nagios publisher
 - ARGO Web API
 - POEM service
@@ -44,6 +45,29 @@ where:
 
 ```sh
 $ ./ams-probe --token T0K3N --host messaging-devel.argo.grnet.gr --project EGI --topic probetest --subscription probetestsub --timeout 30
+```
+
+## ARGO Messaging service Push Server
+
+Probe is inspecting the AMS push server through an AMS instance.
+
+The usage is:
+
+```sh
+$ usage: ams-probe -H HOST --token TOKEN -p PORT --verify
+
+```
+
+where:
+- (-H): the FQDN of the AMS service.
+- (--token): secret used to authenticate to AMS service(admin_viewer or service_admin user)
+- (--port): the port of the AMS service
+- (--verify): SSL verification for the requests library
+
+### Usage example
+
+```sh
+$ ./ams_push_server_check.py -H msg-devel.argo.grnet.gr --token TOK3N --verify
 ```
 
 ## ARGO Messaging Nagios publisher

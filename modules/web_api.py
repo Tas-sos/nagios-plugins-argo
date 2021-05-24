@@ -85,6 +85,10 @@ def createAPICallUrl(arguments):
                                                        errmsg_from_excp(e))
         raise SystemExit(2)
 
+    # Remove disabled reports from response's data results
+    profilesjson["data"] = [ x for x in profilesjson["data"] if x["disabled"] == False ]
+
+
     return profilesjson
 
 
