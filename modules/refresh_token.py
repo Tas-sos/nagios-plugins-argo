@@ -48,7 +48,7 @@ def main():
                 "client_secret": args.client_secret,
                 "grant_type": "refresh_token",
                 "refresh_token": args.refresh_token,
-                "scope": "openid email profile"
+                "scope": "openid email profile eduperson_entitlement"
             },
             timeout=args.timeout
         )

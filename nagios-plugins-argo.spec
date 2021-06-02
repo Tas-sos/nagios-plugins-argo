@@ -4,7 +4,7 @@
 
 Name: nagios-plugins-argo
 Summary: ARGO components related probes.
-Version: 0.1.14
+Version: 0.1.15
 Release: 1%{?dist}
 License: ASL 2.0
 Source0: %{name}-%{version}.tar.gz
@@ -44,6 +44,8 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Jun 2 2021 Katarina Zailac <kzailac@srce.hr> - 0.1.15-1%{?dist}
+- ARGO-3150 Add eduperson_entitlement scope to refresh_token
 * Mon Aug 31 2020 Katarina Zailac <kzailac@srce.hr> - 0.1.13-1%{?dist}
 - ARGO-2442 Monitor OIDC refresh token expiration
 - ARGO-2443 Implement probe for fetching tokens
