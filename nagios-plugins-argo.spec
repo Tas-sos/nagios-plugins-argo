@@ -11,7 +11,7 @@ Source0: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Group: Network/Monitoring
 BuildArch: noarch
-Requires: python-requests, argo-ams-library, pyOpenSSL, python-argparse, nagios-plugins-file_age, curl, python-jwt
+Requires: python-requests, argo-ams-library, pyOpenSSL, python-argparse, nagios-plugins-file_age, curl, python-jwt, pytz, python-dateutil
 
 %description
 This package includes probes for ARGO components.
