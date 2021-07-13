@@ -173,7 +173,8 @@ def CheckResults(arguments, profilesjson):
         if (arguments.rtype=='ar'):
             ProbeDescription[reportName] = 'OK - Availability for ' +reportName +' is OK'
             try:
-                resultsjson['results'][0]['endpoints'][0]['results'][0]['availability']
+                if resultsjson['results'] != None :
+                  resultsjson['results'][0]['endpoints'][0]['results'][0]['availability']
             except KeyError:
                 ProbeDescription[reportName] = 'CRITICAL - cannot retrieve availability from ' +reportName
 
